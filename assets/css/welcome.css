@@ -44,6 +44,18 @@ p, li, label{
     margin-bottom: 40px;
 }
 
+#new-check{
+    text-align: left;
+    /* display: block; */
+    /* position: relative; */
+    cursor: pointer;
+    /* font-size: 22px; */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 #checkbox{
     position: absolute;
     opacity: 0;
@@ -58,6 +70,14 @@ p, li, label{
     width: 13px;
     background-color: transparent;
     border: 2px solid white;
+}
+
+#new-check:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+
+#new-check input:checked ~ .checkmark{
+    background-color: white;
 }
 
 button{
