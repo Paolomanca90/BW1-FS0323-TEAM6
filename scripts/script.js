@@ -120,7 +120,7 @@ const timer = () => {
 };
 
 // da riattivare, bloccata mette noie
-const myTimer = setInterval(timer, 1000);
+// const myTimer = setInterval(timer, 1000);
 
 const shuffle = (array) => {
   let currentIndex = array.length,
@@ -179,7 +179,9 @@ const quest = () => {
       nowSeconds = maxSeconds;
       sec.innerText = nowSeconds;
       questDid.push(rnd);
-      const myQuestPlace = document.getElementById("my-question");
+      // const myQuestPlace = document.getElementById("my-question");
+      const myanswerPlace = document.getElementById("answer-options");
+      const myQuestPlace = document.getElementById("question-text");
       myQuestPlace.replaceChildren();
       const questMain = document.createElement("h2");
       questMain.innerText = questions[rnd].question;
@@ -191,7 +193,8 @@ const quest = () => {
       answersList.forEach((a) => {
         const answers = document.createElement("p");
         answers.innerText = a;
-        myQuestPlace.appendChild(answers);
+        // myQuestPlace.appendChild(answers);
+        myanswerPlace.appendChild(answers);
         answers.addEventListener("click", () => {
           answersButton(answers.innerText, questions[rnd].correct_answer);
         });

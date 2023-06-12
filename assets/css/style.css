@@ -53,7 +53,12 @@ button {
 }
 
 .timer {
-  text-align: center;
+  /* text-align: center; */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
+
   width: 7em;
   height: 7em;
   border: 0.9em solid transparent;
@@ -68,8 +73,8 @@ button {
 }
 
 .timerCont {
-  margin-top: 1.5em;
+  text-align: center;
 }
-.timer p {
+.timer h5 {
   font-size: 0.5em;
 }
