@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/css/reset.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
     <title>Feedback</title>
   </head>
   <body>
@@ -15,21 +19,29 @@
       <main>
         <h2>Tell us how it's going</h2>
         <br />
-
         <p>
           From 0 to 10, how likely are you to recommmend EPICODE
           <br />
           to a friend or a colleague?
         </p>
         <br />
-
-        <div id="rating"></div>
+        <!-- in questa sezione bisognerà avere 10 stelle cliccabili per votare -->
+        <div id="rating">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
       </main>
       <br />
-
       <section>
         <br />
-
         <p>Leave us an open feedback about your experience so far</p>
         <input
           type="text"
@@ -38,8 +50,7 @@
         />
         <br />
         <br />
-
-        <button>MORE INFO</button>
+        <button onclick="Info()">MORE INFO</button>
       </section>
     </div>
     <script src="./scripts/script.js"></script>
