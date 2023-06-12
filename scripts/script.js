@@ -1,16 +1,18 @@
 const sec = document.getElementById("seconds");
 sec.innerText = 3;
 
+let rightQuestions = 0;
+
 const timer = () => {
   if (parseInt(sec.innerText) > 0) {
     sec.innerText = parseInt(sec.innerText) - 1;
   } else {
     alert("tempo esaurito");
-    clearInterval(timer);
+    clearInterval(myTimer);
   }
 };
 
-setInterval(timer, 1000);
+const myTimer = setInterval(timer, 1000);
 
 const question = () => {
   const questionQ = document.createElement("h2");
