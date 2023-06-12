@@ -122,3 +122,9 @@ const myTimer = setInterval(timer, 1000);
 //   console.log(options);
 // };
 // question();
+
+// Funzione bottone proceed in welcome.html che porta alla pagina benchmark.html
+function proceed() {
+  // Reindirizza l'utente alla pagina delle domande
+  window.location.href = "benchmark.html";
+}
