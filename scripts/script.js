@@ -109,7 +109,67 @@ const timer = () => {
   }
 };
 
-const myTimer = setInterval(timer, 1000);
+// da riattivare, bloccata mette noie
+// const myTimer = setInterval(timer, 1000);
+
+const shuffle = (array) => {
+  let currentIndex = array.length,
+    randomIndex;
+
+  // While there remain elements to shuffle.
+  while (currentIndex != 0) {
+    // Pick a remaining element.
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex],
+      array[currentIndex],
+    ];
+  }
+
+  return array;
+};
+
+const answersButton = function (a, c) {
+  console.log("a.innerText", a);
+  if (a === c) {
+    rightQuestions++;
+  }
+  console.log("rightQuestions", rightQuestions);
+};
+
+const answersButton2 = function (a) {
+  console.log("a.innerText2", a.innerText);
+};
+
+const quest = () => {
+  let rnd = Math.floor(Math.random() * questions.length);
+  let questDid = [];
+  if (!questDid.includes(rnd)) {
+    questDid.includes(rnd);
+
+    const myQuestPlace = document.getElementById("my-question");
+    const questMain = document.createElement("h2");
+    questMain.innerText = questions[rnd].question;
+    myQuestPlace.appendChild(questMain);
+    let answers = [];
+    answers.push(questions[rnd].correct_answer);
+    answers.push(...questions[rnd].incorrect_answers);
+    shuffle(answers);
+    answers.forEach((a) => {
+      const answers = document.createElement("p");
+      answers.innerText = a;
+      myQuestPlace.appendChild(answers);
+      answers.addEventListener("click", answersButton2);
+      answers.addEventListener("click", () => {
+        answersButton(answers.innerText, questions[rnd].correct_answer);
+      }); //answers.innerText, questions[rnd].correct_answer
+    });
+  }
+};
+quest();
 
 // dovrebbe caricare array da url ma non funziona
 // const question = () => {
