@@ -172,6 +172,18 @@ const answersButton = function (a, c) {
   }
 };
 
+const benchmarkFooter = document.getElementsByClassName("benchmark-footer")[0];
+const updateFooter = () => {
+  const thisQ = document
+    .getElementsByClassName("benchmark-footer")[0]
+    .getElementsByTagName("h3")[1];
+  thisQ.innerText = questDid.length;
+  const totalQ = document
+    .getElementsByClassName("benchmark-footer")[0]
+    .getElementsByTagName("h3")[2];
+  totalQ.innerText = " / " + questions.length;
+};
+
 const quest = () => {
   let rnd = Math.floor(Math.random() * questions.length);
   if (questDid.length < questions.length) {
@@ -179,11 +191,12 @@ const quest = () => {
       nowSeconds = maxSeconds;
       sec.innerText = nowSeconds;
       questDid.push(rnd);
+      updateFooter();
       // const myQuestPlace = document.getElementById("my-question");
       const myanswerPlace = document.getElementById("answer-options");
       const myQuestPlace = document.getElementById("question-text");
       myQuestPlace.replaceChildren();
-      const questMain = document.createElement("h2");
+      const questMain = document.createElement("h3");
       questMain.innerText = questions[rnd].question;
       myQuestPlace.appendChild(questMain);
       let answersList = [];
