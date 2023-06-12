@@ -95,8 +95,9 @@ const questions = [
   },
 ];
 
-let maxSeconds = 1;
+let maxSeconds = 10;
 let nowSeconds = maxSeconds;
+const timerCont = document.getElementsByClassName("timer")[0];
 const sec = document.getElementById("seconds");
 sec.innerText = maxSeconds;
 
@@ -108,12 +109,13 @@ const timer = () => {
   if (nowSeconds > 0) {
     nowSeconds = nowSeconds - 1;
     sec.innerText = nowSeconds;
+    secPer = 100 - (nowSeconds / maxSeconds) * 100;
+    timerCont.style = `background: linear-gradient(#642669, #642669) content-box no-repeat, conic-gradient( #9a6a9e ${secPer}%, 0, #00e9e9) border-box`;
   } else {
-    // alert("tempo esaurito");
     quest();
     nowSeconds = maxSeconds;
     sec.innerText = nowSeconds;
-    // clearInterval(myTimer);
+    timerCont.style = `background: linear-gradient(#642669, #642669) content-box no-repeat, conic-gradient( #9a6a9e 0%, 0, #00e9e9) border-box`;
   }
 };
 
@@ -124,13 +126,9 @@ const shuffle = (array) => {
   let currentIndex = array.length,
     randomIndex;
 
-  // While there remain elements to shuffle.
   while (currentIndex != 0) {
-    // Pick a remaining element.
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
-
-    // And swap it with the current element.
     [array[currentIndex], array[randomIndex]] = [
       array[randomIndex],
       array[currentIndex],
@@ -181,7 +179,6 @@ const quest = () => {
       nowSeconds = maxSeconds;
       sec.innerText = nowSeconds;
       questDid.push(rnd);
-      console.log(rnd);
       const myQuestPlace = document.getElementById("my-question");
       myQuestPlace.replaceChildren();
       const questMain = document.createElement("h2");
