@@ -40,6 +40,7 @@ p, li, label{
 #list{
     padding: 40px 35px;
     line-height: 1.6em;
+    margin-bottom: 40px;
 }
 
 #checkbox{
@@ -72,8 +73,27 @@ label{
 
 footer{
     display: flex;
-    flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
-    padding: 50px 100px;
-    margin-bottom: 30px;
+    padding-left: 100px;
+    padding-right: 100px;
 }
+
+#error-message{
+    font-weight: 400;
+    font-size: 0.8em;
+    padding-top: 5px;
+    height: 30px;
+    width: 200px;
+}
+
+#error{
+    justify-content: right;
+    margin-top: 10px;
+    margin-bottom: 40px
+}
+
+/* al momento non funziona ci sto lavorando */
+/* #checkbox input:checked ~ .checkmark {
+    border-color: #2196F3;
+} */
