@@ -95,22 +95,30 @@ const questions = [
   },
 ];
 
+let maxSeconds = 1;
+let nowSeconds = maxSeconds;
 const sec = document.getElementById("seconds");
-sec.innerText = 3;
+sec.innerText = maxSeconds;
 
+let questDid = [];
 let rightQuestions = 0;
+let answered = "";
 
 const timer = () => {
-  if (parseInt(sec.innerText) > 0) {
-    sec.innerText = parseInt(sec.innerText) - 1;
+  if (nowSeconds > 0) {
+    nowSeconds = nowSeconds - 1;
+    sec.innerText = nowSeconds;
   } else {
-    alert("tempo esaurito");
-    clearInterval(myTimer);
+    // alert("tempo esaurito");
+    quest();
+    nowSeconds = maxSeconds;
+    sec.innerText = nowSeconds;
+    // clearInterval(myTimer);
   }
 };
 
 // da riattivare, bloccata mette noie
-// const myTimer = setInterval(timer, 1000);
+const myTimer = setInterval(timer, 1000);
 
 const shuffle = (array) => {
   let currentIndex = array.length,
@@ -132,41 +140,68 @@ const shuffle = (array) => {
   return array;
 };
 
-const answersButton = function (a, c) {
-  console.log("a.innerText", a);
-  if (a === c) {
-    rightQuestions++;
+const myAnswer = () => {};
+
+const nextButton = document.getElementById("nextButton");
+const buttonNext = () => {
+  if (answered !== "") {
+    nowSeconds = maxSeconds;
+    if (answered) rightQuestions = rightQuestions + 1;
+    if (questDid.length < questions.length) {
+      quest();
+    }
+    if (questDid.length > questions.length) {
+      endTest();
+    }
+
+    answered = "";
   }
-  console.log("rightQuestions", rightQuestions);
 };
 
-const answersButton2 = function (a) {
-  console.log("a.innerText2", a.innerText);
+nextButton.addEventListener("click", buttonNext);
+
+const endTest = () => {
+  alert("Testi finito, rightQuestions: " + rightQuestions);
+  console.log("questDid ", questDid);
+  clearInterval(myTimer);
+};
+
+const answersButton = function (a, c) {
+  if (a === c) {
+    answered = true;
+  } else {
+    answered = false;
+  }
 };
 
 const quest = () => {
   let rnd = Math.floor(Math.random() * questions.length);
-  let questDid = [];
-  if (!questDid.includes(rnd)) {
-    questDid.includes(rnd);
-
-    const myQuestPlace = document.getElementById("my-question");
-    const questMain = document.createElement("h2");
-    questMain.innerText = questions[rnd].question;
-    myQuestPlace.appendChild(questMain);
-    let answers = [];
-    answers.push(questions[rnd].correct_answer);
-    answers.push(...questions[rnd].incorrect_answers);
-    shuffle(answers);
-    answers.forEach((a) => {
-      const answers = document.createElement("p");
-      answers.innerText = a;
-      myQuestPlace.appendChild(answers);
-      answers.addEventListener("click", answersButton2);
-      answers.addEventListener("click", () => {
-        answersButton(answers.innerText, questions[rnd].correct_answer);
-      }); //answers.innerText, questions[rnd].correct_answer
-    });
+  if (questDid.length < questions.length) {
+    if (!questDid.includes(rnd)) {
+      nowSeconds = maxSeconds;
+      sec.innerText = nowSeconds;
+      questDid.push(rnd);
+      console.log(rnd);
+      const myQuestPlace = document.getElementById("my-question");
+      myQuestPlace.replaceChildren();
+      const questMain = document.createElement("h2");
+      questMain.innerText = questions[rnd].question;
+      myQuestPlace.appendChild(questMain);
+      let answersList = [];
+      answersList.push(questions[rnd].correct_answer);
+      answersList.push(...questions[rnd].incorrect_answers);
+      shuffle(answersList);
+      answersList.forEach((a) => {
+        const answers = document.createElement("p");
+        answers.innerText = a;
+        myQuestPlace.appendChild(answers);
+        answers.addEventListener("click", () => {
+          answersButton(answers.innerText, questions[rnd].correct_answer);
+        });
+      });
+    } else quest();
+  } else {
+    endTest();
   }
 };
 quest();
