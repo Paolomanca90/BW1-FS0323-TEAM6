@@ -188,16 +188,17 @@ quest();
 
 // Funzione bottone proceed in welcome.html che porta alla pagina benchmark.html
 function proceed() {
-  // seleziona gli elementi della pagina HTML che corrispondono alla casella di controllo
+  //seleziona gli elementi della pagina HTML che corrispondono alla casella di controllo e al messaggio di errore
   const checkbox = document.querySelector("#checkbox");
+  const errorMessage = document.querySelector("#error-message");
 
   // Verifica se la casella di controllo è selezionata
   if (checkbox.checked) {
     // Se lo è, reindirizza l'utente alla pagina "benchmark.html"
     window.location.href = "benchmark.html";
   } else {
-    // Se non lo è, visualizza un messaggio di avviso
-    alert("Per favore, spunta la casella prima di procedere.");
+    // Se non lo è, mostra il messaggio di errore
+    errorMessage.textContent = "Per favore, spunta la casella prima di procedere.";
   }
 }
 
