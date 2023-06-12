@@ -183,8 +183,27 @@ quest();
 // };
 // question();
 
+
+// Inizio Scripts Pagina Welcome
+
 // Funzione bottone proceed in welcome.html che porta alla pagina benchmark.html
 function proceed() {
   // Reindirizza l'utente alla pagina delle domande
   window.location.href = "benchmark.html";
 }
+
+// questa parte del codice seleziona gli elementi della pagina HTML che corrispondono alla casella di controllo e al pulsante “PROCEED” 
+// In questo modo, possiamo utilizzare queste variabili per accedere e manipolare gli elementi della pagina. 
+const checkbox = document.querySelector("#checkbox");
+const proceedButton = document.querySelector("#button");
+
+// Disabilita il pulsante per impostazione predefinita
+proceedButton.disabled = true;
+
+// Aggiungi un listener di eventi alla casella di controllo
+checkbox.addEventListener("change", function () {
+  // Abilita o disabilita il bottone Proceed in base se la checkbox è spuntata o meno.
+  proceedButton.disabled = !this.checked;
+});
+
+// Fine Scripts Pagina Welcome
