@@ -1,0 +1,12 @@
+body{
+    background-image: url('/assets/img/bg.jpg');
+}
+
+#logo{
+    height: 150px;
+}
+
+#logo img{
+    height: 40%;
+}
+
