@@ -9,14 +9,52 @@
   </head>
   <body>
     <header>
-      <div id="logo"></div>
+      <div id="logo">
+        <img src="./assets/img/epicode_logo.png" alt="" />
+      </div>
     </header>
     <main>
-      <h1></h1>
-      <div id="rules"></div>
+      <div id="title">
+        <h1>Welcome to <span class="bold">your exam</span></h1>
+      </div>
+
+      <div id="rules">
+        <h2>Instructions</h2>
+        <p>
+          We don't expect most engineers to know the answers to all of these
+          questions, so don't worry if you're unsure of a few of them.
+        </p>
+      </div>
+
+      <div id="list">
+        <ul>
+          <li>
+            Each question is <span class="bold">timed</span> and can only be
+            <span class="bold">answered once</span>.
+          </li>
+          <li>
+            Changing browser tab or opening other windows will
+            <span class="bold">invalidate the question</span>.
+          </li>
+          <li>
+            This exam will take approx. <span class="bold">0-5 minutes</span>.
+          </li>
+        </ul>
+      </div>
     </main>
-    <section>
-      <form></form>
-    </section>
+    <footer id="footer-welcome">
+      <section id="check-box">
+        <form>
+          <input type="checkbox" id="checkbox" />
+          <label for="checkbox">
+            I promise to answer myself without help from anyone
+          </label>
+        </form>
+      </section>
+      <section id="proceed">
+        <button id="button" onclick="proceed()">PROCEED</button>
+      </section>
+    </footer>
+    <script src="./scripts/script.js"></script>
   </body>
 </html>
