@@ -196,6 +196,7 @@ const quest = () => {
       const myanswerPlace = document.getElementById("answer-options");
       const myQuestPlace = document.getElementById("question-text");
       myQuestPlace.replaceChildren();
+      myanswerPlace.replaceChildren();
       const questMain = document.createElement("h3");
       questMain.innerText = questions[rnd].question;
       myQuestPlace.appendChild(questMain);
