@@ -22,23 +22,35 @@ p {
   align-items: center;
   padding-top: 30px;
   padding-bottom: 60px;
-  padding-left: 268px;
+  padding-left: 274px;
   /*flex-direction: column;*/
+  
   justify-content: space-between;
   height: 150px; 
   width: 800px;
 }
-/*#answer-options:hover{ 
-  cursor: pointer;
-  background: linear-gradient(180deg, #c2128d, transparent) #6b0757;
-  scale: 1.1;
-  
- 
-*/
 
+
+p:hover { 
+  cursor: pointer;
+  background: linear-gradient(180deg, transparent);
+  scale: 1.1;
+
+}
+ #nextButton:hover {
+  cursor: pointer;
+  background: linear-gradient(180deg, #3e31ac, transparent) ;
+  scale: 1.1;
+   }
+/*.benchmark-footer:hover {
+  background: linear-gradient(180deg, #0fca5d, transparent) #075512;
+}
+
+*/
 h2 {
-  text-align: center;
-  padding: 40px;
+  text-align: center;/*padding: 30px;*/
+  padding-top: 20px;
+  padding-bottom: 40px;
   font-size: 3.2em;
   font-family: "Outfit", sans-serif;
   font-weight: 700;
@@ -50,13 +62,18 @@ h2 {
   flex-wrap: wrap;
   align-content: center;
 
-  width: 7em;
+  width: 6em;
+  height: 6em;
+  border: 0.8em solid transparent;
+  /*width: 7em;
   height: 7em;
-  border: 0.9em solid transparent;
+  border: 0.9em solid transparent;*/
+  
   border-radius: 50%;
   background: linear-gradient(#642669, #642669) content-box no-repeat,
     conic-gradient(#9a6a9e 0%, 0, #00e9e9) border-box;
-  margin: 2em 6em;
+  margin: 1em 5em;
+  /*margin: 2em 6em;*/
 }
 
 .timer h4 {
@@ -73,10 +90,11 @@ h2 {
 .benchmark-footer {
   display: flex;
   justify-content: center;
-  padding-top: 100px;
-  /* align-items: baseline; */
+  padding-top: 60px;
+  padding-bottom: 40px;
+  align-items: baseline;/* */
   font-size: 1.2em;
-  /* margin-top: 5em; DA CAMBIARE CON bloccare giù */
+  /*margin-bottom: 5em; DA CAMBIARE CON bloccare giù */
 }
 
 .benchmark-footer :last-child {
