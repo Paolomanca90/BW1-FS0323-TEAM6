@@ -106,6 +106,8 @@ let questDid = [];
 let rightQuestions = 0;
 let answered = "";
 
+// Inizio Scrip Pagina Benchmark
+
 //crea il timer e ne gestisce i colori
 const timer = () => {
   if (nowSeconds > 0) {
@@ -222,6 +224,33 @@ const quest = () => {
   }
 };
 quest();
+
+//  event listener al bottone "Avanti" per gestire il click
+nextButton.addEventListener("click", () => {
+  // Verifica se siamo arrivati all'ultima domanda
+  if (questDid.length === maxQuestion) {
+    // Mostra un messaggio di avviso
+    alert(`Hai completato tutte le domande!`);
+    
+    // Calcola il numero di domande corrette e sbagliate
+    let correctAnswers = 0;
+    let wrongAnswers = 0;
+    questions.forEach((question, index) => {
+      if (question.correct_answer === questDid[index]) {
+        correctAnswers++;
+      } else {
+        wrongAnswers++;
+      }
+    });
+    
+    console.log(`Hai risposto correttamente a ${correctAnswers} domande e sbagliato ${wrongAnswers} domande.`);
+    
+    // Reindirizza l'utente alla pagina dei risultati
+    window.location.href = `results.html?correct=${correctAnswers}&wrong=${wrongAnswers}`;
+    
+  } else {}
+});
+
 
 // dovrebbe caricare array da url ma non funziona
 // const question = () => {
