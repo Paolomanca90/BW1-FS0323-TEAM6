@@ -2,9 +2,11 @@
 
 p {
   border: 1px solid whitesmoke;
-  border-radius: 40px;
-  height: 70px;
-  width: 350px;
+  border-radius: 30px;
+  height: 3em;
+  /* height: 50px; */
+  width: 20em;
+  /* width: 300px; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,17 +24,15 @@ p {
   padding-bottom: 30px;
   margin: auto;
   justify-content: space-between;
-  height: 200px; 
+  height: 200px;
   width: 800px;
 }
-
-p:hover{ 
+p:hover {
   cursor: pointer;
   background: linear-gradient(180deg, #c2128d, transparent) #6b0757;
   scale: 1.1;
 }
-
-#nextButton:hover{
+#nextButton:hover {
   cursor: pointer;
   background: #00fff0;
   color: white;
@@ -57,7 +57,7 @@ h2 {
   width: 6em;
   height: 6em;
   border: 0.8em solid transparent;
-  
+
   border-radius: 50%;
   background: linear-gradient(#642669, #642669) content-box no-repeat,
     conic-gradient(#9a6a9e 0%, 0, #00e9e9) border-box;
@@ -90,10 +90,16 @@ h2 {
   color: #b51289;
 }
 
-footer{
+.selected {
+  cursor: pointer;
+  background: linear-gradient(180deg, #c2128d, transparent) #6b0757;
+  scale: 1.1;
+}
+
+footer {
   margin-bottom: 40px;
 }
 
-#nextButton{
+#nextButton {
   border: 2px solid white;
 }
