@@ -105,6 +105,7 @@ let questDid = [];
 let rightQuestions = 0;
 let answered = "";
 
+//crea il timer e ne gestisce i colori
 const timer = () => {
   if (nowSeconds > 0) {
     nowSeconds = nowSeconds - 1;
@@ -122,6 +123,7 @@ const timer = () => {
 // da riattivare, bloccata mette noie
 // const myTimer = setInterval(timer, 1000);
 
+// mischia l'array risposte per averle sempre in ordine diverso
 const shuffle = (array) => {
   let currentIndex = array.length,
     randomIndex;
@@ -138,8 +140,7 @@ const shuffle = (array) => {
   return array;
 };
 
-const myAnswer = () => {};
-
+// funzione del bottone next
 const nextButton = document.getElementById("nextButton");
 const buttonNext = () => {
   if (answered !== "") {
@@ -158,12 +159,14 @@ const buttonNext = () => {
 
 nextButton.addEventListener("click", buttonNext);
 
+//viene chiamata se il test è finito
 const endTest = () => {
   alert("Testi finito, rightQuestions: " + rightQuestions);
   console.log("questDid ", questDid);
   clearInterval(myTimer);
 };
 
+// al click su avanti verifica se la risposta è vera o falsa
 const answersButton = function (a, c) {
   if (a === c) {
     answered = true;
@@ -172,6 +175,7 @@ const answersButton = function (a, c) {
   }
 };
 
+// aggiorna la scritta nel footer
 const benchmarkFooter = document.getElementsByClassName("benchmark-footer")[0];
 const updateFooter = () => {
   const thisQ = document
@@ -184,6 +188,7 @@ const updateFooter = () => {
   totalQ.innerText = " / " + questions.length;
 };
 
+// crea le domande e le risposte in base all'array
 const quest = () => {
   let rnd = Math.floor(Math.random() * questions.length);
   if (questDid.length < questions.length) {
@@ -192,7 +197,6 @@ const quest = () => {
       sec.innerText = nowSeconds;
       questDid.push(rnd);
       updateFooter();
-      // const myQuestPlace = document.getElementById("my-question");
       const myanswerPlace = document.getElementById("answer-options");
       const myQuestPlace = document.getElementById("question-text");
       myQuestPlace.replaceChildren();
@@ -207,7 +211,6 @@ const quest = () => {
       answersList.forEach((a) => {
         const answers = document.createElement("p");
         answers.innerText = a;
-        // myQuestPlace.appendChild(answers);
         myanswerPlace.appendChild(answers);
         answers.addEventListener("click", () => {
           answersButton(answers.innerText, questions[rnd].correct_answer);
