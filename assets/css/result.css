@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&display=swap");
+
+.circular {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+
+    width: 250px;
+    height: 250px;
+    border: 50px solid transparent;
+    border-radius: 50%;
+    /* background: linear-gradient(#642669, #642669) content-box no-repeat,
+      conic-gradient(#d20094 0%, 0, #00FFFF) border-box; */
+    margin: 50px 50px;
+}
+
+#result{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text{
+    font-size: 3.5em;
+    color: white;
+    width: 250px;
+    font-family: "Outfit", sans-serif;
+}
+
+.text:first-of-type{
+    text-align: left;
+}
+
+.text:last-of-type{
+    text-align: right;
+    color: lightgray;
+}
+
+.text p{
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+}
+
+footer{
+    margin-bottom: 80px;
+}
+
+button{
+    border: 2px solid white;
+}
