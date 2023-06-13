@@ -97,6 +97,7 @@ const questions = [
 
 let maxSeconds = 10;
 let nowSeconds = maxSeconds;
+let maxQuestion = questions.length;
 const timerCont = document.getElementsByClassName("timer")[0];
 const sec = document.getElementById("seconds");
 sec.innerText = maxSeconds;
@@ -125,10 +126,10 @@ const timer = () => {
 
 // mischia l'array risposte per averle sempre in ordine diverso
 const shuffle = (array) => {
-  let currentIndex = array.length,
-    randomIndex;
+  let currentIndex = array.length;
+  let randomIndex;
 
-  while (currentIndex != 0) {
+  while (currentIndex !== 0) {
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
     [array[currentIndex], array[randomIndex]] = [
@@ -148,8 +149,7 @@ const buttonNext = () => {
     if (answered) rightQuestions = rightQuestions + 1;
     if (questDid.length < questions.length) {
       quest();
-    }
-    if (questDid.length > questions.length) {
+    } else if (questDid.length === maxQuestion) {
       endTest();
     }
 
