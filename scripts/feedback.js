@@ -1,7 +1,6 @@
 let stars = document.getElementsByClassName("star");
-console.log(stars);
 stars = Array.from(stars);
-console.log(stars);
+let selectedStar;
 
 //viene chiamata ogni volta che la stella viene cliccata o il mouse ci passa sopra
 const starClicked = function (a) {
@@ -16,9 +15,26 @@ const starClicked = function (a) {
     if (i < this.dataset.value) {
       stars[i].classList.add("starsSelecteds");
     }
+  selectedStar = this.dataset.value;
 };
 //aggiunge alle stelle gli eventi click e mouseover
 stars.forEach((a) => {
   a.addEventListener("click", starClicked);
   a.addEventListener("mouseover", starClicked);
 });
+
+//gestione del form
+
+const feedbackFunc = (f) => {
+  f.preventDefault();
+  let feedbackText = document.getElementById("feedback").value;
+  alert(
+    "Grazie per il tuo feedback: " +
+      feedbackText +
+      " e del voto: " +
+      selectedStar
+  );
+};
+
+const feedbackForm = document.getElementById("feedbackForm");
+feedbackForm.addEventListener("submit", feedbackFunc);
