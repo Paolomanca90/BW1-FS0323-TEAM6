@@ -22,13 +22,19 @@ p {
   align-items: center;
   padding-top: 30px;
   padding-bottom: 60px;
+<<<<<<< Updated upstream
   padding-left: 274px;
   /*flex-direction: column;*/
   
+=======
+  padding-left: 268px;
+  /*flex-direction: column;*/
+>>>>>>> Stashed changes
   justify-content: space-between;
   height: 150px; 
   width: 800px;
 }
+<<<<<<< Updated upstream
 
 
 p:hover { 
@@ -51,6 +57,19 @@ h2 {
   text-align: center;/*padding: 30px;*/
   padding-top: 20px;
   padding-bottom: 40px;
+=======
+#answer-options:hover{ 
+  cursor: pointer;
+  background: linear-gradient(180deg, #c2128d, transparent) #6b0757;
+  scale: 1.1;
+  /*
+ 
+}*/
+}
+h2 {
+  text-align: center;
+  padding: 40px;
+>>>>>>> Stashed changes
   font-size: 3.2em;
   font-family: "Outfit", sans-serif;
   font-weight: 700;
@@ -90,9 +109,14 @@ h2 {
 .benchmark-footer {
   display: flex;
   justify-content: center;
+<<<<<<< Updated upstream
   padding-top: 60px;
   padding-bottom: 40px;
   align-items: baseline;/* */
+=======
+  padding-top: 100px;
+  /* align-items: baseline; */
+>>>>>>> Stashed changes
   font-size: 1.2em;
   /*margin-bottom: 5em; DA CAMBIARE CON bloccare giù */
 }
