@@ -121,7 +121,7 @@ const timer = () => {
 };
 
 // da riattivare, bloccata mette noie
-// const myTimer = setInterval(timer, 1000);
+const myTimer = setInterval(timer, 1000);
 
 // mischia l'array risposte per averle sempre in ordine diverso
 const shuffle = (array) => {
