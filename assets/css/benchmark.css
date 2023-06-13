@@ -22,7 +22,8 @@ p {
   align-items: center;
   padding-top: 30px;
   padding-bottom: 60px;
-  padding-left: 268px;
+  padding-left: 25%;
+  padding-right: 25%;
   /*flex-direction: column;*/
   justify-content: space-between;
   height: 150px; 
