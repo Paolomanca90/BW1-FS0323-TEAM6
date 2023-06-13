@@ -59,7 +59,7 @@ const result = function () {
     circularDiv.style = `width: 250px;
     height: 250px;
     border: 50px solid;
-    border-image: linear-gradient(#D20094 ${opposite}%, 0, #00FFFF);
+    border-color: linear-gradient(#D20094 ${opposite}%, 0, #00FFFF);
     border-radius: 50%;`;
     circularDiv.appendChild(p)
     circularDiv.appendChild(s)
@@ -81,3 +81,14 @@ const result = function () {
 };
 
 result();
+
+  let progressC = document.querySelector('.progress')
+  let radius = progressC.r.baseVal.value;
+  let circum = radius * 2 * Math.PI
+  progressC.style.strokeDasharray = circum;
+
+  const setProgress = function(percent){
+    progressC.style.strokeDasharray = circum - (percent/100) * circum;
+  }
+
+  setProgress(rightPerc)

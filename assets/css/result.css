@@ -79,3 +79,17 @@ button{
 button:hover{
     scale: 1.1;
 }
+
+/* .track{
+    stroke: #D20094;
+    fill: none;
+    stroke-width: 10px;
+}
+
+.progress{
+    stroke: #00FFFF;
+    fill: none;
+    stroke-width: 10px;
+    transform: rotate(90deg);
+    transform-origin: center;
+} */
