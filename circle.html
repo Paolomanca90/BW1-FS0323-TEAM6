@@ -1,0 +1,110 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style id="compiled-css" type="text/css">
+      #svg circle {
+        stroke-dashoffset: 0;
+        transition: stroke-dashoffset 0.5s linear;
+        stroke: #666;
+        stroke-width: 1em;
+      }
+      #svg #bar {
+        stroke: red;
+      }
+      #cont {
+        display: block;
+        height: 200px;
+        width: 200px;
+        margin: 2em auto;
+
+        border-radius: 100%;
+        position: relative;
+      }
+      #cont:after {
+        position: absolute;
+        display: block;
+        height: 160px;
+        width: 160px;
+        left: 50%;
+        top: 50%;
+
+        content: attr(data-pct) "%";
+        margin-top: -80px;
+        margin-left: -80px;
+        border-radius: 100%;
+        line-height: 160px;
+        font-size: 2em;
+        text-shadow: 0 0 0.5em black;
+      }
+
+      input {
+        color: #000;
+      }
+
+      /* Make things perty */
+      html {
+        height: 100%;
+      }
+      body {
+        font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+        background-color: gray;
+        color: #fff;
+        height: 100%;
+        padding-top: 2em;
+        text-align: center;
+      }
+      h1,
+      h2 {
+        margin: 0;
+        text-transform: uppercase;
+        text-shadow: 0 0 0.5em black;
+      }
+      h2 {
+        font-weight: 300;
+      }
+      input {
+        border: 1px solid #666;
+        background: #333;
+        color: #fff;
+        padding: 0.5em;
+        box-shadow: none;
+        outline: none;
+        margin: 1em auto;
+        text-align: center;
+        width: 2em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>SVG Circle Progress</h1>
+    <h2>With resize stroke-dasharray calculation</h2>
+
+    <div id="cont" data-pct="100">
+      <svg id="svg" width="200" height="200">
+        <circle
+          r="50"
+          cx="100"
+          cy="100"
+          fill="transparent"
+          stroke-dasharray="314"
+          stroke-dashoffset="0"
+        ></circle>
+        <circle
+          id="bar"
+          r="50"
+          cx="100"
+          cy="100"
+          fill="transparent"
+          stroke-dasharray="314"
+          stroke-dashoffset="0"
+          stroke-linecap="butt"
+          transform="rotate(-90,100,100)"
+        ></circle>
+      </svg>
+    </div>
+    <label for="percent">Percent: </label>
+    <input id="percent" name="percent" />
+    <div id="pathLength"></div>
+    <script src="scripts/circle.js"></script>
+  </body>
+</html>
