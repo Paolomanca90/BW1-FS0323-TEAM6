@@ -161,7 +161,7 @@ nextButton.addEventListener("click", buttonNext);
 
 //viene chiamata se il test è finito
 const endTest = () => {
-  alert("Testi finito, rightQuestions: " + rightQuestions);
+  alert("Test finito, rightQuestions: " + rightQuestions);
   console.log("questDid ", questDid);
   clearInterval(myTimer);
 };
