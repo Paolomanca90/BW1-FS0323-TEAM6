@@ -23,7 +23,7 @@ section input{
 p{
     font-family: 'Outfit', sans-serif;
     font-size: 1.5em;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 /* Stile per le stelle cliccabili */
@@ -49,4 +49,8 @@ p{
 
 section{
   margin-top: 50px;
+}
+
+#feedback{
+  width: 30em;
 }
