@@ -3,21 +3,22 @@ console.log(stars);
 stars = Array.from(stars);
 console.log(stars);
 
-// const starClicked = (a, stars) => {
-//   console.log("clickeddd, ", stars[a]);
-// };
+//viene chiamata ogni volta che la stella viene cliccata o il mouse ci passa sopra
 const starClicked = function (a) {
-  console.log("clickeddd, ", this.dataset.value);
   stars.forEach((s) => {
+    //rimuove l'eventuale classe da tutti gli elementi
     if (s.classList.contains("starsSelecteds")) {
       s.classList.remove("starsSelecteds");
     }
   });
+  //per tutte le stelle con valore minore della stella viene applicata la classe
   for (i = 0; i < this.dataset.value; i++)
     if (i < this.dataset.value) {
       stars[i].classList.add("starsSelecteds");
     }
 };
+//aggiunge alle stelle gli eventi click e mouseover
 stars.forEach((a) => {
   a.addEventListener("click", starClicked);
+  a.addEventListener("mouseover", starClicked);
 });
