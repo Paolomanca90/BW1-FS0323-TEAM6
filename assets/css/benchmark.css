@@ -36,7 +36,7 @@ p:hover{
 }
 #nextButton:hover{
   cursor: pointer;
-  background: linear-gradient(180deg, #c2128d, transparent) #6b0757;
+  background: linear-gradient(180deg, #c2128d, transparent) #00fff0;
   scale: 1.1;
 }
 h2 {
