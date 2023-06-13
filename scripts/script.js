@@ -253,3 +253,15 @@ function proceed() {
       "Per favore, spunta la casella prima di procedere.";
   }
 }
+// Fine Scripts Pagina Welcome
+
+// Inizio Script  Pagina Feedback 
+
+// Funzione bottone feedback.html che porta al sito epicode. 
+function infoButton() {
+  // Reindirizza l'utente alla pagina delle domande
+  window.location.href = "https://epicode.com/en/";
+}
+
+// Fine Script  Pagina Feedback
+
