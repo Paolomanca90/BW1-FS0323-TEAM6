@@ -45,6 +45,8 @@ const result = function(){
   // creazione dei gradienti circolari
   if(rightAns >= 6){
     circularDiv.style = `background: linear-gradient(#642669, #642669) content-box no-repeat, conic-gradient(#D20094 ${opposite}%, 0, #00FFFF) border-box`;
+    let p = document.createElement('p')
+    p.innerText = 'Congratulations!'
     text.innerText = `Congratulations! \nYou passed the exam. \nWe'll send the certificate in few minutes. Check your email (including promotions / spam folder)`
   }else{
     circularDiv.style = `background: linear-gradient(#642669, #642669) content-box no-repeat, conic-gradient(#D20094 ${opposite}%, 0, #00FFFF) border-box`;
