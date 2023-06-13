@@ -101,6 +101,7 @@ const timerCont = document.getElementsByClassName("timer")[0];
 const sec = document.getElementById("seconds");
 sec.innerText = maxSeconds;
 
+let clickedAns = "";
 let questDid = [];
 let rightQuestions = 0;
 let answered = "";
@@ -160,7 +161,6 @@ nextButton.addEventListener("click", buttonNext);
 
 //viene chiamata quando il test è finito
 const endTest = () => {
-  // alert("Test finito, rightQuestions: " + rightQuestions);
   clearInterval(myTimer);
   localStorage.setItem("rightQuestions", rightQuestions);
   localStorage.setItem("allQuestions", questDid.length);
@@ -187,6 +187,27 @@ const updateFooter = () => {
     .getElementsByClassName("benchmark-footer")[0]
     .getElementsByTagName("h3")[2];
   totalQ.innerText = " / " + questions.length;
+};
+
+//colora la risposta selezionata
+const changeClassColor = function (a) {
+  clickedAns.forEach((x) => {
+    if (x.classList.contains("selected")) x.classList.remove("selected");
+  });
+  this.classList.add("selected");
+};
+
+//cerca le risposte per metterci l'eventListner
+const searchAnswers = () => {
+  clickedAns = document
+    .getElementById("answer-options")
+    .getElementsByTagName("p");
+
+  clickedAns = Array.from(clickedAns);
+
+  clickedAns.forEach((c) => {
+    c.addEventListener("click", changeClassColor);
+  });
 };
 
 // crea le domande e le risposte in base all'array
@@ -216,6 +237,7 @@ const quest = () => {
         answers.addEventListener("click", () => {
           answersButton(answers.innerText, questions[rnd].correct_answer);
         });
+        searchAnswers();
       });
     } else quest();
   } else {
