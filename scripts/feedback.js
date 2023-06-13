@@ -12,18 +12,14 @@ const starSelect = function () {
 
 //viene chiamata quando il mouse esce dalle stelle per cancellare il colore
 const starDeSelected = function () {
-  // if (selectedStar === 0) {
   let x = 0;
   let y = 9 - selectedStar;
   for (i = 0; i < y + 1; i++) {
     x = 9 - i;
-    //rimuove l'eventuale classe da tutti gli elementi
     if (stars[x].classList.contains("starsSelecteds")) {
       stars[x].classList.remove("starsSelecteds");
-      console.log("selectedStar: ", selectedStar, "Deselected x:", x, "i: ", i);
     }
   }
-  // }
 };
 
 //viene chiamata ogni volta che la stella viene cliccata
