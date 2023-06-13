@@ -1,4 +1,3 @@
-//array quest
 const questions = [
   {
     category: "Science: Computers",
@@ -122,7 +121,7 @@ const timer = () => {
 };
 
 // da riattivare, bloccata mette noie
-// const myTimer = setInterval(timer, 1000);
+const myTimer = setInterval(timer, 1000);
 
 // mischia l'array risposte per averle sempre in ordine diverso
 const shuffle = (array) => {
@@ -159,11 +158,13 @@ const buttonNext = () => {
 
 nextButton.addEventListener("click", buttonNext);
 
-//viene chiamata se il test è finito
+//viene chiamata quando il test è finito
 const endTest = () => {
-  alert("Testi finito, rightQuestions: " + rightQuestions);
-  console.log("questDid ", questDid);
+  // alert("Test finito, rightQuestions: " + rightQuestions);
   clearInterval(myTimer);
+  localStorage.setItem("rightQuestions", rightQuestions);
+  localStorage.setItem("allQuestions", questDid.length);
+  window.location.href = "results.html";
 };
 
 // al click su avanti verifica se la risposta è vera o falsa
