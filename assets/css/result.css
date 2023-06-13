@@ -7,10 +7,10 @@
     flex-wrap: wrap;
     align-content: center;
 
-    /* width: 250px;
+    width: 250px;
     height: 250px;
     border: 50px solid transparent;
-    border-radius: 50%; */
+    border-radius: 50%;
     /* background: linear-gradient(#642669, #642669) content-box no-repeat,
       conic-gradient(#d20094 0%, 0, #00FFFF) border-box; */
     margin: 50px 50px;
