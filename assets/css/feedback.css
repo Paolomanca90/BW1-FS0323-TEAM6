@@ -36,13 +36,6 @@ p {
   cursor: pointer;
 }
 
-/* Stile per le stelle quando il mouse passa sopra */
-.star:hover,
-  .star.selected {
- /* Imposta il colore delle stelle a blu chiaro */ 
-  color: #00ffff;
-} 
-
 #Infobutton {
   cursor: pointer;
 }
