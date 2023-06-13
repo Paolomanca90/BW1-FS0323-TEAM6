@@ -29,18 +29,11 @@ p {
 /* Stile per le stelle cliccabili */
 .star {
   /* Imposta il colore delle stelle a blu scuro */
-  color: darkblue;
+  color: black;
   /* Imposta la dimensione delle stelle */
   font-size: 2.5em;
   /* Imposta il cursore a puntatore quando il mouse passa sopra le stelle */
   cursor: pointer;
-}
-
-/* Stile per le stelle quando il mouse passa sopra */
-.star:hover,
-.star.selected {
-  /* Imposta il colore delle stelle a blu chiaro */
-  color: lightblue;
 }
 
 #Infobutton {
@@ -48,13 +41,10 @@ p {
 }
 
 .starsSelecteds {
-  color: lightblue;
+  color: #00ffff;
 }
 
 section {
-  margin-top: 50px;
-}
-
-#feedback {
-  width: 30em;
+  margin-top: 40px;
+  margin-bottom: 80px;
 }
