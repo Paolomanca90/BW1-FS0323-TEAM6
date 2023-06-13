@@ -25,12 +25,13 @@ p {
   height: 200px; 
   width: 800px;
 }
+
 p:hover{ 
   cursor: pointer;
   background: linear-gradient(180deg, #c2128d, transparent) #6b0757;
   scale: 1.1;
-
 }
+
 #nextButton:hover{
   cursor: pointer;
   background: #00fff0;
@@ -38,6 +39,7 @@ p:hover{
   scale: 1.1;
   border: none;
 }
+
 h2 {
   text-align: center;
   padding: 5%;
@@ -45,6 +47,7 @@ h2 {
   font-family: "Outfit", sans-serif;
   font-weight: 700;
 }
+
 .timer {
   display: flex;
   justify-content: center;
@@ -69,6 +72,7 @@ h2 {
 .timerCont {
   text-align: center;
 }
+
 .timer h5 {
   font-size: 0.5em;
 }
