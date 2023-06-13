@@ -16,7 +16,7 @@ const questions = [
     type: "multiple",
     difficulty: "easy",
     question:
-      "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?",
+      "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn't get modified?",
     correct_answer: "Final",
     incorrect_answers: ["Static", "Private", "Public"],
   },
@@ -94,7 +94,7 @@ const questions = [
   },
 ];
 
-let maxSeconds = 10;
+let maxSeconds = 30;
 let nowSeconds = maxSeconds;
 let maxQuestion = questions.length;
 const timerCont = document.getElementsByClassName("timer")[0];
@@ -121,7 +121,7 @@ const timer = () => {
 };
 
 // da riattivare, bloccata mette noie
-const myTimer = setInterval(timer, 1000);
+// const myTimer = setInterval(timer, 1000);
 
 // mischia l'array risposte per averle sempre in ordine diverso
 const shuffle = (array) => {
