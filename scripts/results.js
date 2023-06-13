@@ -56,7 +56,11 @@ const result = function () {
     p.innerText = `Congratulations!`
     s.innerText = `You passed the exam.`
     f.innerText = `We'll send the certificate in few minutes. Check your email (including promotions / spam folder)`
-    circularDiv.style = `background: linear-gradient(blue, blue) content-box no-repeat, conic-gradient(#D20094 ${opposite}%, 0, #00FFFF) border-box`;
+    circularDiv.style = `width: 250px;
+    height: 250px;
+    border: 50px solid;
+    border-image: linear-gradient(#D20094 ${opposite}%, 0, #00FFFF);
+    border-radius: 50%;`;
     circularDiv.appendChild(p)
     circularDiv.appendChild(s)
     circularDiv.appendChild(f)
@@ -65,7 +69,11 @@ const result = function () {
     let s = document.createElement('p')
     p.innerText = `OPS!`
     s.innerText = `Unluckly you not passed the exam.`
-    circularDiv.style = `background: linear-gradient(violet, violet) content-box no-repeat, conic-gradient(#D20094 ${opposite}%, 0, #00FFFF) border-box`;
+    circularDiv.style = `width: 250px;
+    height: 250px;
+    border: 50px solid;
+    border-color: linear-gradient(#D20094 ${opposite}%, 0, #00FFFF);
+    border-radius: 50%;`;
     circularDiv.appendChild(p)
     circularDiv.appendChild(s)
   }
