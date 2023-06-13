@@ -34,7 +34,11 @@ p:hover{
   scale: 1.1;
 
 }
-
+#nextButton:hover{
+  cursor: pointer;
+  background: linear-gradient(180deg, #c2128d, transparent) #6b0757;
+  scale: 1.1;
+}
 h2 {
   text-align: center;
   padding: 40px;
