@@ -42,3 +42,6 @@ p{
     color: lightblue;
   }
   
+  #Infobutton{
+    cursor: pointer;
+}
