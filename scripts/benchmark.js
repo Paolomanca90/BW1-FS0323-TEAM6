@@ -97,6 +97,7 @@ const questions = [
 
 let maxSeconds = 10;
 let nowSeconds = maxSeconds;
+let maxQuestion = questions.length;
 const timerCont = document.getElementsByClassName("timer")[0];
 const sec = document.getElementById("seconds");
 sec.innerText = maxSeconds;
@@ -125,10 +126,10 @@ const timer = () => {
 
 // mischia l'array risposte per averle sempre in ordine diverso
 const shuffle = (array) => {
-  let currentIndex = array.length,
-    randomIndex;
+  let currentIndex = array.length;
+  let randomIndex;
 
-  while (currentIndex != 0) {
+  while (currentIndex !== 0) {
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
     [array[currentIndex], array[randomIndex]] = [
@@ -148,8 +149,7 @@ const buttonNext = () => {
     if (answered) rightQuestions = rightQuestions + 1;
     if (questDid.length < questions.length) {
       quest();
-    }
-    if (questDid.length > questions.length) {
+    } else if (questDid.length === maxQuestion) {
       endTest();
     }
 
@@ -234,33 +234,3 @@ quest();
 //   console.log(options);
 // };
 // question();
-
-// Inizio Scripts Pagina Welcome
-
-// Funzione bottone proceed in welcome.html che porta alla pagina benchmark.html
-function proceed() {
-  //seleziona gli elementi della pagina HTML che corrispondono alla casella di controllo e al messaggio di errore
-  const checkbox = document.querySelector("#checkbox");
-  const errorMessage = document.querySelector("#error-message");
-
-  // Verifica se la casella di controllo è selezionata
-  if (checkbox.checked) {
-    // Se lo è, reindirizza l'utente alla pagina "benchmark.html"
-    window.location.href = "benchmark.html";
-  } else {
-    // Se non lo è, mostra il messaggio di errore
-    errorMessage.textContent =
-      "Per favore, spunta la casella prima di procedere.";
-  }
-}
-// Fine Scripts Pagina Welcome
-
-// Inizio Script  Pagina Feedback
-
-// Funzione bottone feedback.html che porta al sito epicode.
-function infoButton() {
-  // Reindirizza l'utente alla pagina delle domande
-  window.location.href = "https://epicode.com/en/";
-}
-
-// Fine Script  Pagina Feedback

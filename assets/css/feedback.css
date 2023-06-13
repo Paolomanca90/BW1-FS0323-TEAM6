@@ -23,4 +23,34 @@ section input{
 p{
     font-family: 'Outfit', sans-serif;
     font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* Stile per le stelle cliccabili */
+.star {
+    /* Imposta il colore delle stelle a blu scuro */
+    color: darkblue;
+    /* Imposta la dimensione delle stelle */
+    font-size: 2.5em;
+    /* Imposta il cursore a puntatore quando il mouse passa sopra le stelle */
+    cursor: pointer;
+  }
+  
+  /* Stile per le stelle quando il mouse passa sopra */
+  .star:hover,
+  .star.selected {
+    /* Imposta il colore delle stelle a blu chiaro */
+    color: lightblue;
+  }
+  
+  #Infobutton{
+    cursor: pointer;
+}
+
+section{
+  margin-top: 50px;
+}
+
+#feedback{
+  width: 30em;
 }
