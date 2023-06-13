@@ -1,4 +1,3 @@
-//array quest
 const questions = [
   {
     category: "Science: Computers",
