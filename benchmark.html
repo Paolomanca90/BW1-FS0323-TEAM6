@@ -22,6 +22,30 @@
       </div>
     </header>
     <main>
+      <div id="difficultsDiv">
+        <form id="difficultsForm">
+          <label for="difficults">Select difficult</label>
+          <div>
+            <input
+              type="radio"
+              id="easy"
+              name="difficults"
+              value="easy"
+              checked
+            />
+            <label for="easy">Easy</label>
+          </div>
+          <div>
+            <input type="radio" id="medium" name="difficults" value="medium" />
+            <label for="medium">Medium</label>
+          </div>
+          <div>
+            <input type="radio" id="hard" name="difficults" value="hard" />
+            <label for="hard">Hard</label>
+          </div>
+          <button id="startButton">Start Test</button>
+        </form>
+      </div>
       <div id="my-question">
         <!-- l testo della domanda -->
         <h2 id="question-text"></h2>

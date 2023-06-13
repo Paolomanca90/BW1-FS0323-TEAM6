@@ -122,7 +122,8 @@ const timer = () => {
 };
 
 // da riattivare, bloccata mette noie
-const myTimer = setInterval(timer, 1000);
+let myTimer = setInterval(timer, 1000);
+clearInterval(myTimer);
 
 // mischia l'array risposte per averle sempre in ordine diverso
 const shuffle = (array) => {
@@ -158,14 +159,6 @@ const buttonNext = () => {
 };
 
 nextButton.addEventListener("click", buttonNext);
-
-//viene chiamata quando il test è finito
-const endTest = () => {
-  clearInterval(myTimer);
-  localStorage.setItem("rightQuestions", rightQuestions);
-  localStorage.setItem("allQuestions", questDid.length);
-  window.location.href = "results.html";
-};
 
 // al click su avanti verifica se la risposta è vera o falsa
 const answersButton = function (a, c) {
@@ -244,7 +237,49 @@ const quest = () => {
     endTest();
   }
 };
-quest();
+
+//avvia il test dopo la scelta della difficoltà
+const difficultForm = document.getElementById("difficultsForm");
+const startTest = function (b) {
+  b.preventDefault();
+  const diffChosen = document.querySelector(
+    'input[name="difficults"]:checked'
+  ).value;
+  console.log(diffChosen);
+  quest(); //ex 247
+  // myTimer = setInterval(timer, 1000);
+  const divToHide = document.getElementById("difficultsDiv");
+  divToHide.classList.add("none");
+  timerCont.classList.remove("none");
+  nextButton.classList.remove("none");
+  benchmarkFooter.classList.remove("none");
+};
+
+//nasconde items all'avvio
+timerCont.classList.add("none");
+nextButton.classList.add("none");
+benchmarkFooter.classList.add("none");
+
+difficultForm.addEventListener("submit", startTest);
+
+//viene chiamata quando il test è finito
+const endTest = () => {
+  clearInterval(myTimer);
+  localStorage.setItem("rightQuestions", rightQuestions);
+  localStorage.setItem("allQuestions", questDid.length);
+  window.location.href = "results.html";
+};
+
+//legge array da url
+// let url = new URL(
+//   "https://opentdb.com/api.php?amount=10&category=18&difficulty=easy"
+// );
+// let params = new URLSearchParams(url);
+// console.log("log1: ", params.getAll("size"));
+// console.log("log2: ", params.getAll(1));
+
+//Add a second foo parameter.
+// params.append("foo", 4);
 
 // dovrebbe caricare array da url ma non funziona
 // const question = () => {
