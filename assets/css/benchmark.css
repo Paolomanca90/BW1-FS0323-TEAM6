@@ -22,7 +22,8 @@ p {
   align-items: center;
   padding-top: 30px;
   padding-bottom: 60px;
-  padding-left: 268px;
+  padding-right: 25%;
+  padding-left: 25%;
   /*flex-direction: column;*/
   justify-content: space-between;
   height: 150px; 
@@ -42,7 +43,7 @@ p:hover{
 }
 h2 {
   text-align: center;
-  padding: 40px;
+  padding: 5%;
   font-size: 3.2em;
   font-family: "Outfit", sans-serif;
   font-weight: 700;
