@@ -22,8 +22,10 @@ p {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 30px;
-  margin: auto;
+  padding-top: 30px;
+  padding-bottom: 60px;
+  padding-left: 25%;
+  padding-right: 25%;
   justify-content: space-between;
   /* height: 200px; */
   width: 850px;
@@ -58,7 +60,6 @@ h2 {
   width: 6em;
   height: 6em;
   border: 0.8em solid transparent;
-
   border-radius: 50%;
   background: linear-gradient(#642669, #642669) content-box no-repeat,
     conic-gradient(#9a6a9e 0%, 0, #00e9e9) border-box;
@@ -81,10 +82,9 @@ h2 {
 .benchmark-footer {
   display: flex;
   justify-content: center;
-  padding-top: 60px;
-  font-size: 1.1em;
-  font-family: "Outfit", sans-serif;
-  letter-spacing: 2px;
+  padding-top: 100px;
+  font-size: 1.2em;
+  /*margin-bottom: 5em; DA CAMBIARE CON bloccare giù */
 }
 
 .benchmark-footer :last-child {
