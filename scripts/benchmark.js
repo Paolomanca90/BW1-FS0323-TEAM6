@@ -75,7 +75,7 @@ const buttonNext = () => {
     }
 
     answered = "";
-    timerCont.style = `background: linear-gradient(#642669, #642669) content-box no-repeat, conic-gradient( #d20094 0%, 0, #00FFFF) border-box`;
+    clearInterval(myTimer);
   }
 };
 
@@ -126,11 +126,12 @@ const searchAnswers = () => {
 
 // crea le domande e le risposte in base all'array
 const quest = () => {
-  let rnd = Math.floor(Math.random() * questions.length);
   //controlla se il bottone next non è visibile e lo rende visibile
   if (nextButton.classList.contains("none"))
     nextButton.classList.remove("none");
+
   if (questDid.length < questions.length) {
+    let rnd = Math.floor(Math.random() * questions.length);
     if (!questDid.includes(rnd)) {
       nowSeconds = maxSeconds;
       sec.innerText = nowSeconds;
@@ -138,8 +139,8 @@ const quest = () => {
       updateFooter();
       const myanswerPlace = document.getElementById("answer-options");
       const myQuestPlace = document.getElementById("question-text");
-      myQuestPlace.replaceChildren();
       myanswerPlace.replaceChildren();
+      myQuestPlace.replaceChildren();
       const questMain = document.createElement("h3");
       questMain.innerText = questions[rnd].question;
       myQuestPlace.appendChild(questMain);
@@ -151,11 +152,14 @@ const quest = () => {
         const answers = document.createElement("p");
         answers.innerText = a;
         myanswerPlace.appendChild(answers);
+
         answers.addEventListener("click", () => {
           answersButton(answers.innerText, questions[rnd].correct_answer);
         });
         searchAnswers();
       });
+      myTimer = setInterval(timer, 1000);
+      timerCont.style = `background: linear-gradient(#642669, #642669) content-box no-repeat, conic-gradient( #9a6a9e 0%, 0, #00e9e9) border-box`;
     } else quest();
   } else {
     endTest();
@@ -179,7 +183,6 @@ const startTest = async function (b) {
   questions = readedQuestions["results"];
   maxQuestion = questions.length;
   quest();
-  myTimer = setInterval(timer, 1000);
   const divToHide = document.getElementById("difficultsDiv");
   divToHide.classList.add("none");
   timerCont.classList.remove("none");
