@@ -7,15 +7,22 @@
     flex-wrap: wrap;
     align-content: center;
 
-    width: 250px;
-    height: 250px;
-    border: 50px solid transparent;
+    width: 400px;
+    height: 400px;
+    /* border: 50px solid transparent; */
     border-radius: 50%;
     /* background: linear-gradient(#642669, #642669) content-box no-repeat,
       conic-gradient(#d20094 0%, 0, #00FFFF) border-box; */
-    margin: 50px 50px;
+    margin: 50px 0;
     font-family: "Outfit", sans-serif;
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.75)
+}
+
+.circular:after{
+    content: attr(data);
+    margin-top: -260px;
+    font-size: 1.8em;
+    padding: 30px;
 }
 
 .circular p:first-of-type{
@@ -80,16 +87,16 @@ button:hover{
     scale: 1.1;
 }
 
-/* .track{
+.track{
     stroke: #D20094;
     fill: none;
-    stroke-width: 10px;
+    stroke-width: 50px;
 }
 
 .progress{
     stroke: #00FFFF;
     fill: none;
-    stroke-width: 10px;
+    stroke-width: 50px;
     transform: rotate(90deg);
     transform-origin: center;
-} */
+}
