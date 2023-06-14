@@ -15,7 +15,6 @@ p {
 }
 
 #answer-options {
-  /*padding-top: 10px;*/
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -24,7 +23,6 @@ p {
   padding-bottom: 60px;
   padding-left: 25%;
   padding-right: 25%;
-  /*flex-direction: column;*/
   justify-content: space-between;
   height: 150px; 
   width: 800px;
@@ -49,7 +47,6 @@ h2 {
   font-weight: 700;
 }
 .timer {
-  /* text-align: center; */
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -58,10 +55,6 @@ h2 {
   width: 6em;
   height: 6em;
   border: 0.8em solid transparent;
-  /*width: 7em;
-  height: 7em;
-  border: 0.9em solid transparent;*/
-  
   border-radius: 50%;
   background: linear-gradient(#642669, #642669) content-box no-repeat,
     conic-gradient(#9a6a9e 0%, 0, #00e9e9) border-box;
@@ -83,7 +76,6 @@ h2 {
   display: flex;
   justify-content: center;
   padding-top: 100px;
-  /* align-items: baseline; */
   font-size: 1.2em;
   /*margin-bottom: 5em; DA CAMBIARE CON bloccare giù */
 }
