@@ -75,7 +75,7 @@ const buttonNext = () => {
     }
 
     answered = "";
-    timerCont.style = `background: linear-gradient(#642669, #642669) content-box no-repeat, conic-gradient( #9a6a9e 0%, 0, #00e9e9) border-box`;
+    timerCont.style = `background: linear-gradient(#642669, #642669) content-box no-repeat, conic-gradient( #d20094 0%, 0, #00FFFF) border-box`;
   }
 };
 

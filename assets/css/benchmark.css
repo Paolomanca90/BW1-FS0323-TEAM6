@@ -77,7 +77,7 @@ h2 {
   border: 0.8em solid transparent;
   border-radius: 50%;
   background: linear-gradient(#642669, #642669) content-box no-repeat,
-    conic-gradient(#9a6a9e 0%, 0, #00e9e9) border-box;
+    conic-gradient(#d20094 0%, 0, #00FFFF) border-box;
   margin: 1em 6em;
   font-family: "Outfit", sans-serif;
 }
