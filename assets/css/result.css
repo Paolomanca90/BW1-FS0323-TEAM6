@@ -2,105 +2,107 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&display=swap");
 
 .circular {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-content: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
 
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    margin: 50px 0;
-    font-family: "Outfit", sans-serif;
-    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.75)
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  margin: 50px 0;
+  font-family: "Outfit", sans-serif;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.75);
 }
 
-.finalE{
-    width: 70%;
-    position: absolute;
-    top: 35%;
+.finalE {
+  width: 70%;
+  position: absolute;
+  top: 35%;
 }
 
-.finalR{
-    width: 70%;
-    position: absolute;
-    top: 32%;
+.finalR {
+  width: 70%;
+  position: absolute;
+  top: 32%;
 }
 
-.finalE p:first-of-type, .finalR p:first-of-type{
-    font-size: 1.2em;
-    font-weight: 700;
+.finalE p:first-of-type,
+.finalR p:first-of-type {
+  font-size: 1.2em;
+  font-weight: 700;
 }
 
-.finalE p:nth-of-type(2), .finalR p:nth-of-type(2){
-    font-size: 1.2em;
-    color: #20f3f3;
-    font-weight: 700;
-    padding: 5px;
-    line-height: 1.3em;
+.finalE p:nth-of-type(2),
+.finalR p:nth-of-type(2) {
+  font-size: 1.2em;
+  color: #20f3f3;
+  font-weight: 700;
+  padding: 5px;
+  line-height: 1.3em;
 }
 
-.finalE p:nth-of-type(3), .finalR p:nth-of-type(3){
-   padding: 20px;
-   line-height: 1.2em;
+.finalE p:nth-of-type(3),
+.finalR p:nth-of-type(3) {
+  padding: 20px;
+  line-height: 1.2em;
 }
 
-#result{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
-.text{
-    font-size: 3.5em;
-    color: white;
-    width: 250px;
-    font-family: "Outfit", sans-serif;
+.text {
+  font-size: 3.5em;
+  color: white;
+  width: 250px;
+  font-family: "Outfit", sans-serif;
 }
 
-.text:first-of-type{
-    text-align: left;
+.text:first-of-type {
+  text-align: left;
 }
 
-.text:last-of-type{
-    text-align: right;
-    color: lightgray;
+.text:last-of-type {
+  text-align: right;
+  color: lightgray;
 }
 
-.text p:first-of-type{
-    font-size: 3.5rem;
-    font-weight: 900;
+.text p:first-of-type {
+  font-size: 3.5rem;
+  font-weight: 900;
 }
 
-.text p{
-    font-size: 16px;
+.text p {
+  font-size: 16px;
 }
 
-footer{
-    margin-bottom: 80px;
+footer {
+  margin-bottom: 80px;
 }
 
-button{
-    border: 2px solid white;
-    cursor: pointer;
+button {
+  border: 2px solid white;
+  cursor: pointer;
 }
 
-button:hover{
-    scale: 1.1;
+button:hover {
+  scale: 1.1;
 }
 
-.track{
-    stroke: #D20094;
-    fill: none;
-    stroke-width: 50px;
+.track {
+  stroke: #00ffff;
+  fill: none;
+  stroke-width: 50px;
 }
 
-.progress{
-    stroke: #00FFFF;
-    fill: none;
-    stroke-width: 50px;
-    transform: rotate(125deg);
-    transform-origin: center;
+.progress {
+  stroke: #d20094;
+  fill: none;
+  stroke-width: 50px;
+  transform: rotate(270deg);
+  transform-origin: center;
 }
