@@ -8,13 +8,12 @@ const rightQuestions = localStorage.getItem("rightQuestions");
 const allQuestions = localStorage.getItem("allQuestions");
 
 // variabili per il calcolo delle %
-let rightAns = rightQuestions;
+let rightAns = 9;
 let questions = allQuestions;
 let errorAns = questions - rightAns;
 let rightPerc = (100 * rightAns) / questions;
 let opposite = 100 - rightPerc;
 let myResult = document.getElementById("result");
-let circle = document.querySelector('.progress')
 let svg = document.querySelector('svg')
 
 // funzione per creare i 3 div dei risultati
@@ -52,6 +51,8 @@ const result = function () {
 
   // creazione dei gradienti circolari
   if(rightAns >= 6){
+    let div = document.createElement('div')
+    div.classList.add('finalR')
     let p = document.createElement('p')
     let s = document.createElement('p')
     let f = document.createElement('p')
@@ -59,20 +60,28 @@ const result = function () {
     s.innerText = `You passed the exam.`
     f.innerText = `We'll send the certificate in few minutes. Check your email (including promotions / spam folder)`
     // circularDiv.style = `background: linear-gradient(#642669, #642669) content-box no-repeat, conic-gradient( #D20094 ${opposite}%, 0, #00FFFF) border-box`;
-    circle.appendChild(p)
-    circle.appendChild(s)
-    circle.appendChild(f)
     circularDiv.appendChild(svg)
+    div.appendChild(p)
+    div.appendChild(s)
+    div.appendChild(f)
+    circularDiv.appendChild(div)
+    
   }else{
+    let div = document.createElement('div')
+    div.classList.add('finalE')
     let p = document.createElement('p')
     let s = document.createElement('p')
+    let f = document.createElement('p')
     p.innerText = `OPS!`
     s.innerText = `Unluckly you not passed the exam.`
+    f.innerText = `I'm sure you are not taking the Epicode course with Stefano`
     // circularDiv.style = `background: linear-gradient(#642669, #642669) content-box no-repeat, conic-gradient( #D20094 ${opposite}%, 0, #00FFFF) border-box`;
-    // circle.appendChild(p)
-    // circle.appendChild(s)
     circularDiv.appendChild(svg)
-    circularDiv.setAttribute('data', p.innerText + s.innerText)
+    div.appendChild(p)
+    div.appendChild(s)
+    div.appendChild(f)
+    circularDiv.appendChild(div)
+    // circularDiv.setAttribute('data', p.innerText + s.innerText)
   }
   return circularDiv;
 };
