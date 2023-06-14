@@ -1,99 +1,4 @@
-const questions = [
-  {
-    category: "Science: Computers",
-    type: "multiple",
-    difficulty: "easy",
-    question: "What does CPU stand for?",
-    correct_answer: "Central Processing Unit",
-    incorrect_answers: [
-      "Central Process Unit",
-      "Computer Personal Unit",
-      "Central Processor Unit",
-    ],
-  },
-  {
-    category: "Science: Computers",
-    type: "multiple",
-    difficulty: "easy",
-    question:
-      "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn't get modified?",
-    correct_answer: "Final",
-    incorrect_answers: ["Static", "Private", "Public"],
-  },
-  {
-    category: "Science: Computers",
-    type: "boolean",
-    difficulty: "easy",
-    question: "The logo for Snapchat is a Bell.",
-    correct_answer: "False",
-    incorrect_answers: ["True"],
-  },
-  {
-    category: "Science: Computers",
-    type: "boolean",
-    difficulty: "easy",
-    question:
-      "Pointers were not used in the original C programming language; they were added later on in C++.",
-    correct_answer: "False",
-    incorrect_answers: ["True"],
-  },
-  {
-    category: "Science: Computers",
-    type: "multiple",
-    difficulty: "easy",
-    question:
-      "What is the most preferred image format used for logos in the Wikimedia database?",
-    correct_answer: ".svg",
-    incorrect_answers: [".png", ".jpeg", ".gif"],
-  },
-  {
-    category: "Science: Computers",
-    type: "multiple",
-    difficulty: "easy",
-    question: "In web design, what does CSS stand for?",
-    correct_answer: "Cascading Style Sheet",
-    incorrect_answers: [
-      "Counter Strike: Source",
-      "Corrective Style Sheet",
-      "Computer Style Sheet",
-    ],
-  },
-  {
-    category: "Science: Computers",
-    type: "multiple",
-    difficulty: "easy",
-    question:
-      "What is the code name for the mobile operating system Android 7.0?",
-    correct_answer: "Nougat",
-    incorrect_answers: ["Ice Cream Sandwich", "Jelly Bean", "Marshmallow"],
-  },
-  {
-    category: "Science: Computers",
-    type: "multiple",
-    difficulty: "easy",
-    question: "On Twitter, what is the character limit for a Tweet?",
-    correct_answer: "140",
-    incorrect_answers: ["120", "160", "100"],
-  },
-  {
-    category: "Science: Computers",
-    type: "boolean",
-    difficulty: "easy",
-    question: "Linux was first created as an alternative to Windows XP.",
-    correct_answer: "False",
-    incorrect_answers: ["True"],
-  },
-  {
-    category: "Science: Computers",
-    type: "multiple",
-    difficulty: "easy",
-    question:
-      "Which programming language shares its name with an island in Indonesia?",
-    correct_answer: "Java",
-    incorrect_answers: ["Python", "C", "Jakarta"],
-  },
-];
-
+let questions = [];
 let maxSeconds = 30;
 let nowSeconds = maxSeconds;
 let maxQuestion = questions.length;
@@ -147,14 +52,30 @@ const nextButton = document.getElementById("nextButton");
 const buttonNext = () => {
   if (answered !== "") {
     nowSeconds = maxSeconds;
-    if (answered) rightQuestions = rightQuestions + 1;
+    //dopo il click mostra il risultato della risposta
+    const selectedAns = document.getElementsByClassName("selected")[0];
+    console.log(selectedAns);
+    if (answered) {
+      rightQuestions = rightQuestions + 1;
+      selectedAns.classList.add("righAnswer");
+    } else {
+      selectedAns.classList.add("wrongAnswer");
+    }
+    //nasconde il bottone next per evitare multiple risposte
+    nextButton.classList.add("none");
     if (questDid.length < questions.length) {
-      quest();
+      //e dopo x secondi chiama la prossima domanda o termina il test
+      setTimeout(function () {
+        quest();
+      }, 1500);
     } else if (questDid.length === maxQuestion) {
-      endTest();
+      setTimeout(function () {
+        endTest();
+      }, 1500);
     }
 
     answered = "";
+    timerCont.style = `background: linear-gradient(#642669, #642669) content-box no-repeat, conic-gradient( #9a6a9e 0%, 0, #00e9e9) border-box`;
   }
 };
 
@@ -206,6 +127,9 @@ const searchAnswers = () => {
 // crea le domande e le risposte in base all'array
 const quest = () => {
   let rnd = Math.floor(Math.random() * questions.length);
+  //controlla se il bottone next non è visibile e lo rende visibile
+  if (nextButton.classList.contains("none"))
+    nextButton.classList.remove("none");
   if (questDid.length < questions.length) {
     if (!questDid.includes(rnd)) {
       nowSeconds = maxSeconds;
@@ -240,12 +164,20 @@ const quest = () => {
 
 //avvia il test dopo la scelta della difficoltà
 const difficultForm = document.getElementById("difficultsForm");
-const startTest = function (b) {
+const startTest = async function (b) {
   b.preventDefault();
+  //prende la difficoltà scelta dai radio button
   const diffChosen = document.querySelector(
     'input[name="difficults"]:checked'
   ).value;
-  console.log(diffChosen);
+
+  //legge dall'url il json, aspetta e lo invia alla'array questions
+  let response = await fetch(
+    `https://opentdb.com/api.php?amount=10&category=18&difficulty=${diffChosen}`
+  );
+  let readedQuestions = await response.json();
+  questions = readedQuestions["results"];
+  maxQuestion = questions.length;
   quest();
   myTimer = setInterval(timer, 1000);
   const divToHide = document.getElementById("difficultsDiv");
@@ -269,26 +201,3 @@ const endTest = () => {
   localStorage.setItem("allQuestions", questDid.length);
   window.location.href = "results.html";
 };
-
-//legge array da url
-// let url = new URL(
-//   "https://opentdb.com/api.php?amount=10&category=18&difficulty=easy"
-// );
-// let params = new URLSearchParams(url);
-// console.log("log1: ", params.getAll("size"));
-// console.log("log2: ", params.getAll(1));
-
-//Add a second foo parameter.
-// params.append("foo", 4);
-
-// dovrebbe caricare array da url ma non funziona
-// const question = () => {
-//   const questionQ = document.createElement("h2");
-//   url_string =
-//     "https://opentdb.com/api.php?amount=10&category=18&difficulty=easy";
-//   url = new URL(url_string);
-//   options = url.searchParams.getAll("[]");
-
-//   console.log(options);
-// };
-// question();

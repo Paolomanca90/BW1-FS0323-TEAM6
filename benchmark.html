@@ -23,25 +23,39 @@
     </header>
     <main>
       <div id="difficultsDiv">
+        <h2>Select difficult for test exam</h2>
         <form id="difficultsForm">
-          <label for="difficults">Select difficult</label>
           <div>
-            <input
-              type="radio"
-              id="easy"
-              name="difficults"
-              value="easy"
-              checked
-            />
-            <label for="easy">Easy</label>
+            <label class="container" for="easy"
+              >Easy
+              <input
+                type="radio"
+                id="easy"
+                name="difficults"
+                value="easy"
+                checked
+              />
+              <span class="checkmark"></span>
+            </label>
           </div>
           <div>
-            <input type="radio" id="medium" name="difficults" value="medium" />
-            <label for="medium">Medium</label>
+            <label class="container" for="medium"
+              >Medium
+              <input
+                type="radio"
+                id="medium"
+                name="difficults"
+                value="medium"
+              />
+              <span class="checkmark"></span>
+            </label>
           </div>
           <div>
-            <input type="radio" id="hard" name="difficults" value="hard" />
-            <label for="hard">Hard</label>
+            <label class="container" for="hard"
+              >Hard
+              <input type="radio" id="hard" name="difficults" value="hard" />
+              <span class="checkmark"></span>
+            </label>
           </div>
           <button id="startButton">Start Test</button>
         </form>
