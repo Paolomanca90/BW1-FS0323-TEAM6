@@ -14,13 +14,38 @@
         <img src="./assets/img/epicode_logo.png" alt="logo" />
       </div>
       <div class="timer">
-          <div class="timerCont">
+        <div class="timerCont">
           <h5>SECONDS</h5>
           <h4 id="seconds">0</h4>
           <h5>REMAINING</h5>
         </div>
+      </div>
     </header>
     <main>
+      <div id="difficultsDiv">
+        <form id="difficultsForm">
+          <label for="difficults">Select difficult</label>
+          <div>
+            <input
+              type="radio"
+              id="easy"
+              name="difficults"
+              value="easy"
+              checked
+            />
+            <label for="easy">Easy</label>
+          </div>
+          <div>
+            <input type="radio" id="medium" name="difficults" value="medium" />
+            <label for="medium">Medium</label>
+          </div>
+          <div>
+            <input type="radio" id="hard" name="difficults" value="hard" />
+            <label for="hard">Hard</label>
+          </div>
+          <button id="startButton">Start Test</button>
+        </form>
+      </div>
       <div id="my-question">
         <!-- l testo della domanda -->
         <h2 id="question-text"></h2>
@@ -30,9 +55,9 @@
       <button id="nextButton">AVANTI</button>
     </main>
     <footer class="benchmark-footer">
-      <h3>QUESTION:</h3>
+      <h3>QUESTION&nbsp</h3>
       <h3 class="nQuest"></h3>
-      <h3 class="totQuest">/</h3>
+      <h3 class="totQuest"></h3>
     </footer>
     <script src="scripts/script.js"></script>
     <script src="scripts/benchmark.js"></script>

@@ -56,7 +56,7 @@ const result = function () {
     p.innerText = `Congratulations!`
     s.innerText = `You passed the exam.`
     f.innerText = `We'll send the certificate in few minutes. Check your email (including promotions / spam folder)`
-    circularDiv.style = `background: linear-gradient(blue, blue) content-box no-repeat, conic-gradient(#D20094 ${opposite}%, 0, #00FFFF) border-box`;
+    circularDiv.style = `background: linear-gradient(#642669, #642669) content-box no-repeat, conic-gradient( #D20094 ${opposite}%, 0, #00FFFF) border-box`;
     circularDiv.appendChild(p)
     circularDiv.appendChild(s)
     circularDiv.appendChild(f)
@@ -65,7 +65,7 @@ const result = function () {
     let s = document.createElement('p')
     p.innerText = `OPS!`
     s.innerText = `Unluckly you not passed the exam.`
-    circularDiv.style = `background: linear-gradient(violet, violet) content-box no-repeat, conic-gradient(#D20094 ${opposite}%, 0, #00FFFF) border-box`;
+    circularDiv.style = `background: linear-gradient(#642669, #642669) content-box no-repeat, conic-gradient( #D20094 ${opposite}%, 0, #00FFFF) border-box`;
     circularDiv.appendChild(p)
     circularDiv.appendChild(s)
   }
@@ -73,3 +73,14 @@ const result = function () {
 };
 
 result();
+
+  let progressC = document.querySelector('.progress')
+  let radius = progressC.r.baseVal.value;
+  let circum = radius * 2 * Math.PI
+  progressC.style.strokeDasharray = circum;
+
+  const setProgress = function(percent){
+    progressC.style.strokeDasharray = circum - (percent/100) * circum;
+  }
+
+  setProgress(rightPerc)
