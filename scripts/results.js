@@ -8,7 +8,7 @@ const rightQuestions = localStorage.getItem("rightQuestions");
 const allQuestions = localStorage.getItem("allQuestions");
 
 // variabili per il calcolo delle %
-let rightAns = 3;
+let rightAns = 5;
 let questions = allQuestions;
 let errorAns = questions - rightAns;
 let rightPerc = (100 * rightAns) / questions;
@@ -68,8 +68,6 @@ const result = function () {
     div.appendChild(s);
     div.appendChild(f);
     circularDiv.appendChild(div);
-    progress.style = "stroke: #00ffff;";
-    track.style = "stroke: #d20094";
   } else {
     let div = document.createElement("div");
     div.classList.add("finalE");
@@ -85,9 +83,6 @@ const result = function () {
     div.appendChild(s);
     div.appendChild(f);
     circularDiv.appendChild(div);
-    track.style = "stroke: #00ffff;";
-    progress.style = "stroke: #d20094";
-    // circularDiv.setAttribute('data', p.innerText + s.innerText)
   }
   return circularDiv;
 };
@@ -100,13 +95,13 @@ let circum = radius * 2 * Math.PI;
 progressC.style.strokeDasharray = circum;
 
 const setProgress = function (percent) {
-  progressC.style.strokeDasharray = circum - (percent / 100) * circum;
+  console.log(percent);
+  // progressC.style.strokeDasharray = circum - (percent / 100) * circum;
+  progressC.style.strokeDasharray = `${
+    circum - (percent / 100) * circum
+  } ${circum}`;
+
+  console.log(progressC.style.strokeDasharray);
 };
 
-let setRighPerc = () => {
-  if (rightPerc < 50) {
-    return rightPerc;
-  } else return opposite;
-};
-
-setProgress(setRighPerc());
+setProgress(rightPerc);

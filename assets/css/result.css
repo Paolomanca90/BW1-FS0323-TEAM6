@@ -105,4 +105,5 @@ button:hover {
   stroke-width: 50px;
   transform: rotate(270deg);
   transform-origin: center;
+  /* transform: scaleX(-1); */
 }
