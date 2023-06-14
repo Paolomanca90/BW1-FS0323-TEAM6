@@ -39,12 +39,12 @@ form div:hover {
   align-items: center;
   padding-top: 30px;
   padding-bottom: 60px;
-  padding-left: 25%;
-  padding-right: 25%;
+  margin: auto;
   justify-content: space-between;
   /* height: 200px; */
   width: 850px;
 }
+
 p:hover {
   cursor: pointer;
   background: linear-gradient(180deg, #c2128d, transparent) #6b0757;
@@ -114,6 +114,7 @@ h2 {
 
 footer {
   margin-bottom: 40px;
+  font-family: "Outfit", sans-serif;
 }
 
 #nextButton {
