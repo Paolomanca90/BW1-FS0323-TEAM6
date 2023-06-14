@@ -17,12 +17,12 @@ const timer = () => {
     nowSeconds = nowSeconds - 1;
     sec.innerText = nowSeconds;
     secPer = 100 - (nowSeconds / maxSeconds) * 100;
-    timerCont.style = `background: linear-gradient(#642669, #642669) content-box no-repeat, conic-gradient( #9a6a9e ${secPer}%, 0, #00e9e9) border-box`;
+    timerCont.style = `background: linear-gradient(#642669, #642669) content-box no-repeat, conic-gradient( #9a6a9e ${secPer}%, 0, #00FFFF) border-box`;
   } else {
     quest();
     nowSeconds = maxSeconds;
     sec.innerText = nowSeconds;
-    timerCont.style = `background: linear-gradient(#642669, #642669) content-box no-repeat, conic-gradient( #9a6a9e 0%, 0, #00e9e9) border-box`;
+    timerCont.style = `background: linear-gradient(#642669, #642669) content-box no-repeat, conic-gradient( #9a6a9e 0%, 0, #00FFFF) border-box`;
   }
 };
 
