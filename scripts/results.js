@@ -8,7 +8,7 @@ const rightQuestions = localStorage.getItem("rightQuestions");
 const allQuestions = localStorage.getItem("allQuestions");
 
 // variabili per il calcolo delle %
-let rightAns = 5;
+let rightAns = rightQuestions;
 let questions = allQuestions;
 let errorAns = questions - rightAns;
 let rightPerc = (100 * rightAns) / questions;
