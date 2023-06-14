@@ -48,13 +48,21 @@ stars.forEach((a) => {
 
 const feedbackFunc = (f) => {
   f.preventDefault();
-  let feedbackText = document.getElementById("feedback").value;
+  let feedbackText = document.getElementById("feedback");
+  let valueF = feedbackText.value
   alert(
     "Grazie per il tuo feedback: " +
-      feedbackText +
+      valueF +
       " e del voto: " +
       selectedStar
   );
+  feedbackText.value = ''
+  stars.forEach((s) => {
+    //rimuove l'eventuale classe da tutti gli elementi
+    if (s.classList.contains("starsSelecteds")) {
+      s.classList.remove("starsSelecteds");
+    }
+  });
 };
 
 const feedbackForm = document.getElementById("feedbackForm");
