@@ -64,15 +64,15 @@ const result = function () {
     circle.appendChild(f)
     circularDiv.appendChild(svg)
   }else{
-    // let p = document.createElement('p')
-    // let s = document.createElement('p')
-    // p.innerText = `OPS!`
-    // s.innerText = `Unluckly you not passed the exam.`
+    let p = document.createElement('p')
+    let s = document.createElement('p')
+    p.innerText = `OPS!`
+    s.innerText = `Unluckly you not passed the exam.`
     // circularDiv.style = `background: linear-gradient(#642669, #642669) content-box no-repeat, conic-gradient( #D20094 ${opposite}%, 0, #00FFFF) border-box`;
     // circle.appendChild(p)
     // circle.appendChild(s)
     circularDiv.appendChild(svg)
-    circularDiv.setAttribute('data', "OPS! Unluckly you not passed the exam.")
+    circularDiv.setAttribute('data', p.innerText + s.innerText)
   }
   return circularDiv;
 };
