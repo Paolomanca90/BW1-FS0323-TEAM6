@@ -44,9 +44,6 @@ const result = function () {
   let circularDiv = document.createElement("div");
   circularDiv.classList.add("circular");
 
-  let track = document.getElementsByClassName("track")[0];
-  let progress = document.getElementsByClassName("progress")[0];
-
   // appendo i 3 div a cascata per averli nelle giuste posizioni
   myResult.appendChild(right);
   myResult.appendChild(circularDiv);
@@ -62,7 +59,6 @@ const result = function () {
     p.innerText = `Congratulations!`;
     s.innerText = `You passed the exam.`;
     f.innerText = `We'll send the certificate in few minutes. Check your email (including promotions / spam folder)`;
-    // circularDiv.style = `background: linear-gradient(#642669, #642669) content-box no-repeat, conic-gradient( #D20094 ${opposite}%, 0, #00FFFF) border-box`;
     circularDiv.appendChild(svg);
     div.appendChild(p);
     div.appendChild(s);
@@ -77,7 +73,6 @@ const result = function () {
     p.innerText = `OPS!`;
     s.innerText = `Unluckly you not passed the exam.`;
     f.innerText = `I'm sure you are not taking the Epicode course with Stefano`;
-    // circularDiv.style = `background: linear-gradient(#642669, #642669) content-box no-repeat, conic-gradient( #D20094 ${opposite}%, 0, #00FFFF) border-box`;
     circularDiv.appendChild(svg);
     div.appendChild(p);
     div.appendChild(s);
@@ -96,7 +91,6 @@ progressC.style.strokeDasharray = circum;
 
 const setProgress = function (percent) {
   console.log(percent);
-  // progressC.style.strokeDasharray = circum - (percent / 100) * circum;
   progressC.style.strokeDasharray = `${
     circum - (percent / 100) * circum
   } ${circum}`;

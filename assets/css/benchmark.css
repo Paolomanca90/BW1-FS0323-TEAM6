@@ -6,9 +6,7 @@ form button {
   border: 1px solid whitesmoke;
   border-radius: 30px;
   height: 3em;
-  /* height: 50px; */
   width: 20em;
-  /* width: 300px; */
   margin-bottom: 1em;
   display: flex;
   align-items: center;
@@ -41,7 +39,6 @@ form div:hover {
   padding-bottom: 60px;
   margin: auto;
   justify-content: space-between;
-  /* height: 200px; */
   width: 850px;
 }
 
@@ -77,7 +74,7 @@ h2 {
   border: 0.8em solid transparent;
   border-radius: 50%;
   background: linear-gradient(#642669, #642669) content-box no-repeat,
-    conic-gradient(#d20094 0%, 0, #00FFFF) border-box;
+    conic-gradient(#9a6a9e 0%, 0, #00FFFF) border-box;
   margin: 1em 6em;
   font-family: "Outfit", sans-serif;
 }
@@ -99,7 +96,6 @@ h2 {
   justify-content: center;
   padding-top: 100px;
   font-size: 1.2em;
-  /*margin-bottom: 5em; DA CAMBIARE CON bloccare giù */
 }
 
 .benchmark-footer :last-child {
