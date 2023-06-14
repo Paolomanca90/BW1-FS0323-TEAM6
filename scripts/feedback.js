@@ -63,6 +63,7 @@ const feedbackFunc = (f) => {
       s.classList.remove("starsSelecteds");
     }
   });
+  selectedStar = 0;
 };
 
 const feedbackForm = document.getElementById("feedbackForm");
