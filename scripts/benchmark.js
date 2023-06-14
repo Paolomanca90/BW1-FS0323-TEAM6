@@ -148,11 +148,24 @@ const nextButton = document.getElementById("nextButton");
 const buttonNext = () => {
   if (answered !== "") {
     nowSeconds = maxSeconds;
-    if (answered) rightQuestions = rightQuestions + 1;
+    //dopo il click mostra il risultato della risposta
+    const selectedAns = document.getElementsByClassName("selected")[0];
+    console.log(selectedAns);
+    if (answered) {
+      rightQuestions = rightQuestions + 1;
+      selectedAns.classList.add("righAnswer");
+    } else {
+      selectedAns.classList.add("wrongAnswer");
+    }
     if (questDid.length < questions.length) {
-      quest();
+      //e dopo x secondi chiama la prossima domanda o termina il test
+      setTimeout(function () {
+        quest();
+      }, 1500);
     } else if (questDid.length === maxQuestion) {
-      endTest();
+      setTimeout(function () {
+        endTest();
+      }, 1500);
     }
 
     answered = "";

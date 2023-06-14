@@ -108,3 +108,15 @@ footer {
 .none {
   display: none;
 }
+
+.righAnswer {
+  cursor: pointer;
+  background: linear-gradient(180deg, #67c212, transparent) #276b07;
+  scale: 1.1;
+}
+
+.wrongAnswer {
+  cursor: pointer;
+  background: linear-gradient(180deg, #c21212, transparent) #6b070c;
+  scale: 1.1;
+}
