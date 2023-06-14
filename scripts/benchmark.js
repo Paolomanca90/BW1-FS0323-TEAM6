@@ -246,8 +246,8 @@ const startTest = function (b) {
     'input[name="difficults"]:checked'
   ).value;
   console.log(diffChosen);
-  quest(); //ex 247
-  // myTimer = setInterval(timer, 1000);
+  quest();
+  myTimer = setInterval(timer, 1000);
   const divToHide = document.getElementById("difficultsDiv");
   divToHide.classList.add("none");
   timerCont.classList.remove("none");
