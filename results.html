@@ -17,16 +17,17 @@
     <main>
       <h2>Results</h2>
       <h5>The summary of your correct answers:</h5>
+      <canvas id="myChart"></canvas>
       <div id="result">
-        <!-- <svg width="250" heigth="250">
-          <circle r="50" cx="125" cy="75" class="track"></circle>
-          <circle r="50" cx="125" cy="75" class="progress"></circle>
-        </svg> -->
+        <canvas id="myChart"></canvas>
       </div>
     </main>
     <footer>
       <button id="buttonRate" onclick="proceedRate()">RATE US</button>
     </footer>
-    <script src="./scripts/results.js"></script>
+    <!-- ultima versione di Chart.js dalla CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+    <script src="./scripts/results2.js"></script>
   </body>
 </html>

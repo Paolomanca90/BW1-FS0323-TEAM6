@@ -35,12 +35,12 @@
    padding: 20px;
 }
 
-#result{
+#result {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
+  }
+  
 
 .text{
     font-size: 3.5em;
@@ -93,3 +93,8 @@ button:hover{
     transform: rotate(90deg);
     transform-origin: center;
 } */
+
+#myChart {
+    max-width: 500px;
+  }
+  
