@@ -71,7 +71,7 @@ const result = function () {
     let s = document.createElement("p");
     let f = document.createElement("p");
     p.innerText = `OPS!`;
-    s.innerText = `Unluckly you not passed the exam.`;
+    s.innerText = `Unluckily you not did not pass the exam.`;
     f.innerText = `I'm sure you are not taking the Epicode course with Stefano`;
     circularDiv.appendChild(svg);
     div.appendChild(p);
