@@ -176,13 +176,21 @@ const startTest = async function (b) {
     'input[name="difficults"]:checked'
   ).value;
 
+  const numQuestChosen = parseInt(
+    document.querySelector('select[name="numQuestChosen"]').value
+  );
+  console.log("numQuestChosen", numQuestChosen);
+
+  maxQuestion = numQuestChosen;
+  // maxQuestion = questions.length;
+
   //legge dall'url il json, aspetta e lo invia alla'array questions
   let response = await fetch(
-    `https://opentdb.com/api.php?amount=10&category=18&difficulty=${diffChosen}`
+    `https://opentdb.com/api.php?amount=${maxQuestion}&category=18&difficulty=${diffChosen}`
   );
   let readedQuestions = await response.json();
   questions = readedQuestions["results"];
-  maxQuestion = questions.length;
+
   quest();
   const divToHide = document.getElementById("difficultsDiv");
   divToHide.classList.add("none");

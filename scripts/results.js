@@ -50,7 +50,7 @@ const result = function () {
   myResult.appendChild(error);
 
   // creazione dei gradienti circolari
-  if (rightAns >= 6) {
+  if (rightAns >= allQuestions * 0.6) {
     let div = document.createElement("div");
     div.classList.add("finalR");
     let p = document.createElement("p");
