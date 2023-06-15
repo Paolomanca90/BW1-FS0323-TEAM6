@@ -20,6 +20,7 @@ const timer = () => {
     timerCont.style = `background: linear-gradient(#642669, #642669) content-box no-repeat, conic-gradient( #9a6a9e ${secPer}%, 0, #00FFFF) border-box`;
   } else {
     quest();
+    clearInterval(myTimer);
     nowSeconds = maxSeconds;
     sec.innerText = nowSeconds;
     timerCont.style = `background: linear-gradient(#642669, #642669) content-box no-repeat, conic-gradient( #9a6a9e 0%, 0, #00FFFF) border-box`;
